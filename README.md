@@ -11,13 +11,29 @@
 - detect short-time scan pattern
 - show scan timeline
 
-## Status
+## Quick Start
 
-Scaffolded. Implementation pending.
+```bash
+python3 -m src.timeline data/normal-traffic.log data/nmap-scan.log
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
+
+The CLI writes:
+
+- `reports/detection-report.md`
+- `reports/findings.json`
+
+## MVP Capabilities
+
+- Parses safe synthetic firewall logs
+- Detects many destination ports hit by the same source in a short window
+- Separates normal traffic from Nmap-like recon behavior
+- Produces a Markdown timeline and machine-readable JSON findings
+- Includes unit tests and CI execution
 
 ## Repository Status
 
-This repository contains the production-ready foundation for the Port Scan Lab MVP. The current codebase is scaffolded and ready for focused implementation work.
+This repository contains a working Port Scan Lab MVP with safe lab fixtures, deterministic detection rules, generated report output, and tests.
 
 ## Production Foundation
 
@@ -29,4 +45,3 @@ This repository contains the production-ready foundation for the Port Scan Lab M
 - Pull request and issue templates
 - Production readiness checklist
 - Safe ignore rules for local secrets and generated files
-

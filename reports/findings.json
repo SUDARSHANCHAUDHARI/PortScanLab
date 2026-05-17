@@ -1,0 +1,13 @@
+[
+  {
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "port_count": 12,
+    "event_count": 12,
+    "first_seen": "2026-05-18T10:05:00+00:00",
+    "last_seen": "2026-05-18T10:05:33+00:00",
+    "duration_seconds": 33.0,
+    "risk": "medium",
+    "reason": "12 unique destination ports touched within 60 seconds"
+  }
+]
