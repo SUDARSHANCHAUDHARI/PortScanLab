@@ -35,19 +35,41 @@ The CLI writes:
 
 - `reports/detection-report.md`
 - `reports/findings.json`
+- `reports/events.json`
+- `reports/summary.json`
+- `reports/source-risk.json`
+- `reports/triage.md`
 
 ## MVP Capabilities
 
 - Parses safe synthetic firewall logs
 - Detects many destination ports hit by the same source in a short window
+- Classifies scan profiles such as mixed service recon and remote access recon
+- Builds source-IP risk rows for analyst triage
 - Separates normal traffic from Nmap-like recon behavior
-- Produces a Markdown timeline and machine-readable JSON findings
+- Produces a Markdown timeline, triage report, source risk table, and machine-readable JSON findings
 - Includes unit tests and CI execution
+
+## Demo Artifacts
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Security notes](docs/SECURITY_NOTES.md)
+- [Demo walkthrough](docs/DEMO.md)
+- [Release notes](docs/RELEASE_NOTES.md)
+- [Sample detection report](reports/detection-report.md)
+- [Sample triage report](reports/triage.md)
+- [Sample source risk table](reports/source-risk.json)
+
+## Docker Demo
+
+```bash
+docker compose run --rm port-scan-demo
+```
 
 ## Roadmap
 
-- Polish sample output screenshots or terminal demos
-- Add architecture diagram and deeper implementation notes
-- Expand test coverage around edge cases
-- Add Docker or local demo workflow where useful
-- Prepare `v0.1.0-mvp` release notes
+- Add allowlist/suppression support for approved scanners.
+- Add UDP/TCP profile tuning and threshold config.
+- Add timeline charts for scan bursts.
+- Add SIEM-friendly JSONL export.
+- Prepare GitHub release `v0.1.0-mvp`.

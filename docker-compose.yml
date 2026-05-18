@@ -1,0 +1,7 @@
+services:
+  port-scan-demo:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./reports:/app/reports

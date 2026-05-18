@@ -1,0 +1,78 @@
+[
+  {
+    "source_ip": "192.0.2.50",
+    "events": 12,
+    "unique_destination_ports": 12,
+    "destinations": [
+      "10.0.0.20"
+    ],
+    "findings": 1,
+    "max_risk": "high",
+    "ports_sample": [
+      21,
+      22,
+      23,
+      25,
+      53,
+      80,
+      110,
+      139,
+      443,
+      445,
+      3389,
+      8080
+    ]
+  },
+  {
+    "source_ip": "10.0.0.10",
+    "events": 2,
+    "unique_destination_ports": 1,
+    "destinations": [
+      "10.0.0.20"
+    ],
+    "findings": 0,
+    "max_risk": "low",
+    "ports_sample": [
+      443
+    ]
+  },
+  {
+    "source_ip": "10.0.0.11",
+    "events": 1,
+    "unique_destination_ports": 1,
+    "destinations": [
+      "10.0.0.20"
+    ],
+    "findings": 0,
+    "max_risk": "low",
+    "ports_sample": [
+      22
+    ]
+  },
+  {
+    "source_ip": "10.0.0.12",
+    "events": 1,
+    "unique_destination_ports": 1,
+    "destinations": [
+      "10.0.0.30"
+    ],
+    "findings": 0,
+    "max_risk": "low",
+    "ports_sample": [
+      53
+    ]
+  },
+  {
+    "source_ip": "10.0.0.13",
+    "events": 1,
+    "unique_destination_ports": 1,
+    "destinations": [
+      "10.0.0.40"
+    ],
+    "findings": 0,
+    "max_risk": "low",
+    "ports_sample": [
+      8443
+    ]
+  }
+]

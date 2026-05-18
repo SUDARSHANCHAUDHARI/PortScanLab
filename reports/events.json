@@ -1,0 +1,138 @@
+[
+  {
+    "timestamp": "2026-05-18T10:00:00+00:00",
+    "source_ip": "10.0.0.10",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 443,
+    "protocol": "TCP",
+    "action": "ALLOW"
+  },
+  {
+    "timestamp": "2026-05-18T10:00:15+00:00",
+    "source_ip": "10.0.0.11",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 22,
+    "protocol": "TCP",
+    "action": "ALLOW"
+  },
+  {
+    "timestamp": "2026-05-18T10:01:05+00:00",
+    "source_ip": "10.0.0.12",
+    "destination_ip": "10.0.0.30",
+    "destination_port": 53,
+    "protocol": "UDP",
+    "action": "ALLOW"
+  },
+  {
+    "timestamp": "2026-05-18T10:02:10+00:00",
+    "source_ip": "10.0.0.10",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 443,
+    "protocol": "TCP",
+    "action": "ALLOW"
+  },
+  {
+    "timestamp": "2026-05-18T10:03:15+00:00",
+    "source_ip": "10.0.0.13",
+    "destination_ip": "10.0.0.40",
+    "destination_port": 8443,
+    "protocol": "TCP",
+    "action": "ALLOW"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:00+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 21,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:03+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 22,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:06+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 23,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:09+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 25,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:12+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 53,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:15+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 80,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:18+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 110,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:21+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 139,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:24+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 443,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:27+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 445,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:30+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 3389,
+    "protocol": "TCP",
+    "action": "DENY"
+  },
+  {
+    "timestamp": "2026-05-18T10:05:33+00:00",
+    "source_ip": "192.0.2.50",
+    "destination_ip": "10.0.0.20",
+    "destination_port": 8080,
+    "protocol": "TCP",
+    "action": "DENY"
+  }
+]
