@@ -1,77 +1,87 @@
 # Port Scan Lab
 
-[![Python](https://img.shields.io/badge/Python-3.12-blue)](#) [![Status](https://img.shields.io/badge/status-MVP-green)](#) [![Security](https://img.shields.io/badge/security-defensive%20lab-purple)](#)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](#requirements)
+[![Status](https://img.shields.io/badge/status-MVP-green)](#status)
+[![Security](https://img.shields.io/badge/security-defensive%20lab-purple)](#safe-use)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Detection lab for identifying Nmap-like recon activity from firewall logs.
+Detection lab for identifying Nmap-style port scan and reconnaissance activity from firewall logs.
 
-- **Portfolio group:** Cybersecurity lab project
-- **Status:** MVP implemented, tested, committed, and pushed to GitHub
-- **GitHub:** https://github.com/SUDARSHANCHAUDHARI/PortScanLab
-- **Local path:** `/Users/screencloudsudarshan/SUDARSHAN_CODE/sudarshan_repos/CyberSecurity/PortScanLab`
+---
 
-## MVP Snapshot
+## Overview
 
-This repository includes a working MVP with safe sample data, deterministic detection or analysis logic, local tests, and generated output reports where relevant. It is ready for README/demo polish or deeper product work.
+Port Scan Lab is a defensive analysis lab tool that parses firewall logs, groups connection attempts by source IP, and detects port scanning patterns: wide port sweeps, mixed-service reconnaissance, and rapid scan windows. Outputs include scan findings, per-source risk tables, a Markdown timeline report, and analyst triage handoff.
 
-## Safe Use
+## Features
 
-This project is defensive and analysis-focused. Use only with logs, systems, repositories, and lab environments you own or have permission to assess.
+- Parses common firewall log formats
+- Detects wide-range port scans
+- Identifies mixed-service reconnaissance (web + SSH + DB ports)
+- Detects rapid scan windows (compact time bursts)
+- Scores risk per source IP
+- Outputs JSON findings, source risk table, Markdown timeline report, and triage handoff
 
-## Core Features
+## Requirements
 
-- ingest firewall logs
-- detect many ports from same IP
-- detect short-time scan pattern
-- show scan timeline
+- Python 3.10 or newer
+- Linux, macOS, or Windows
+- No third-party Python packages (standard library only)
+- Optional: Docker for the demo container
 
-
-## Install
+## Installation
 
 ```bash
+git clone https://github.com/SUDARSHANCHAUDHARI/PortScanLab.git
+cd PortScanLab
 pip install .
 ```
 
-This registers the `port-scan-lab` command. Or run directly:
+This registers the `port-scan-lab` CLI command.
+
+To run without installing:
 
 ```bash
 python3 main.py --help
 ```
 
-## Quick Start
+## Usage
+
+Analyze the included sample firewall logs:
 
 ```bash
-python3 -m src.timeline data/normal-traffic.log data/nmap-scan.log
-python3 -m unittest discover -s tests -p 'test_*.py'
+python3 main.py --out reports/report.md
 ```
 
-The CLI writes:
+Generated outputs in `reports/`:
 
-- `reports/detection-report.md`
-- `reports/findings.json`
-- `reports/events.json`
-- `reports/summary.json`
-- `reports/source-risk.json`
-- `reports/triage.md`
+- `events.json` — parsed firewall events
+- `findings.json` — detected scan findings
+- `source-risk.json` — per-source risk table
+- `summary.json` — counts and severity breakdown
+- `report.md` — Markdown timeline report
+- `triage.md` — analyst triage checklist
 
-## MVP Capabilities
+## Project Structure
 
-- Parses safe synthetic firewall logs
-- Detects many destination ports hit by the same source in a short window
-- Classifies scan profiles such as mixed service recon and remote access recon
-- Builds source-IP risk rows for analyst triage
-- Separates normal traffic from Nmap-like recon behavior
-- Produces a Markdown timeline, triage report, source risk table, and machine-readable JSON findings
-- Includes unit tests and CI execution
+```
+PortScanLab/
+├── src/            Log parser, scan detector, timeline builder
+├── data/           Safe sample firewall logs (normal + nmap-scan)
+├── reports/        Example generated output
+├── docker/         Dockerfile + compose support
+├── docs/           Architecture, security notes, demo
+├── tests/          Unit tests
+├── main.py         CLI entrypoint
+├── pyproject.toml  Package metadata
+└── LICENSE
+```
 
-## Demo Artifacts
+## Testing
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [Security notes](docs/SECURITY_NOTES.md)
-- [Demo walkthrough](docs/DEMO.md)
-- [Release notes](docs/RELEASE_NOTES.md)
-- [Sample detection report](reports/detection-report.md)
-- [Sample triage report](reports/triage.md)
-- [Sample source risk table](reports/source-risk.json)
+```bash
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
 
 ## Docker Demo
 
@@ -79,10 +89,29 @@ The CLI writes:
 docker compose run --rm port-scan-demo
 ```
 
+## Safe Use
+
+This project is defensive and analysis-focused. Use only with logs and lab environments you own or have explicit written permission to assess. The included sample logs are synthetic and safe for public demo use.
+
+## Status
+
+Working CLI MVP with tests, sample data, and Docker support.
+
 ## Roadmap
 
-- Add allowlist/suppression support for approved scanners.
-- Add UDP/TCP profile tuning and threshold config.
-- Add timeline charts for scan bursts.
-- Add SIEM-friendly JSONL export.
-- Prepare GitHub release `v0.1.0-mvp`.
+- Live `iptables` log tailing mode
+- Sigma rule import for scan signatures
+- Per-protocol scan profile classification
+- Allowlist for trusted scanners (internal vuln scans)
+- GitHub release `v0.1.0-mvp`
+
+## License
+
+Released under the [MIT License](LICENSE). You are free to use, modify, and distribute this software with attribution.
+
+## Author
+
+**Sudarshan Chaudhari** — [SudarshanTechLabs](https://github.com/SUDARSHANCHAUDHARI)
+Bangkok, Thailand
+
+For inquiries: open an issue on [GitHub](https://github.com/SUDARSHANCHAUDHARI/PortScanLab/issues).
