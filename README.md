@@ -24,6 +24,19 @@ This project is defensive and analysis-focused. Use only with logs, systems, rep
 - detect short-time scan pattern
 - show scan timeline
 
+
+## Install
+
+```bash
+pip install .
+```
+
+This registers the `port-scan-lab` command. Or run directly:
+
+```bash
+python3 main.py --help
+```
+
 ## Quick Start
 
 ```bash
